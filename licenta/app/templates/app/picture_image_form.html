@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+<head>
+    <title></title>
+
+ <style>
+
+.center {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  background-color:tomato;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 200px 630px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+.upload {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 200px 30px;
+  color:white;
+
+}
+
+
+</style>
+</head>
+
+<body style="background-image: url('{% static 'img/fundal1.jpeg'%}');"> 
+    <h1 class="center"> Bine ati venit! Introduceti imagini grayscale si iti vor fi returnate color! </h1>
+    <form class="upload" method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button" type="submit">Upload</button>
+    </form>
+
+</body>
+</html>
