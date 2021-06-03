@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+
+ <style>
+
+
+.center {
+  position: fixed;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+  color: #EDFFEC;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  margin: 270px 550px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  border-radius: 8px;
+}
+
+.upload {
+  text-align: center;
+  font-size: 40px;
+  color:  #98DDCA;
+}
+
+.result {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  cursor: pointer;
+  background-color: #1EAE98;
+  position:relative;
+  border-radius: 8px;
+  top: -200px;
+  left: 530px;
+;
+}
+
+
+</style>
+</head>
+
+<body style="background-image: linear-gradient(to right top, #1b262c, #0f4c75, #3282b8, #bbe1fa);"> 
+    <h1 class="center"> Bine ati venit! Introduceti imagini grayscale apasand butonul "Choose file", urmat de butonul "Upload" si iti vor fi returnate color! </h1>
+    <form  method = "post" enctype="multipart/form-data" class="upload">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <button class="button" type="submit">Upload</button>
+    </form>
+    <button id="myBtn" class="result" type="submit">Coloreaza imaginile!</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function() {
+  alert('clicked');
+
+  fetch('get_colorized_images', {
+    //method: 'GET'
+});
+  
+});
+</script>
+
+
+</body>
+</html>

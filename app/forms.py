@@ -7,4 +7,4 @@ class PictureForm(forms.ModelForm):
   
     class Meta:
         model = Picture
-        fields = ['picture_Main_Img']
+        fields = ['imagine']
