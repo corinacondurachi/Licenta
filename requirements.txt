@@ -212,11 +212,6 @@ srsly==2.4.1
 sympy==1.5.1
 tables==3.6.1
 tblib==1.6.0
-tensorboard==1.14.0
-tensorflow==1.14.0
-tensorflow-estimator==1.14.0
-termcolor==1.1.0
-terminado==0.8.3
 testpath==0.4.4
 thinc==8.0.3
 toolz==0.10.0
@@ -239,7 +234,6 @@ whitenoise==5.2.0
 widgetsnbextension==3.5.1
 wrapt==1.11.2
 wurlitzer==2.0.0
-xgboost==1.1.0
 xlrd==1.2.0
 XlsxWriter==1.2.7
 xlwings==0.17.1
