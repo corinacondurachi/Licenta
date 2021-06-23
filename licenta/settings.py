@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-twgd#(tq4-f5snpr!wyosf%scqek55yh_*_6-nn+i_f%my35b+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'automaticcolorization.herokuapp.com']
 
 
 # Application definition
