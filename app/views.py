@@ -35,7 +35,8 @@ def get_colorized_images(request):
     path = 'media/images/'
     for file in os.listdir(path):
         val_paths.append (path + file)
-    val_paths.remove(path + '.DS_Store')
+    if path + '.DS_Store' in val_paths:
+        val_paths.remove(path + '.DS_Store')
     val_dl = make_dataloaders(paths=val_paths, split='val')
     see_results(model,val_dl, val_paths)
     print("finised")

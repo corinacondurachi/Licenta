@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-twgd#(tq4-f5snpr!wyosf%scqek55yh_*_6-nn+i_f%my35b+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'automaticcolorization.herokuapp.com']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition

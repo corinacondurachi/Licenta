@@ -260,7 +260,10 @@ def visualize(model, data, val_paths):
         ax = plt.subplot(3, 5, i + 1 + 5)
         ax.imshow(fake_imgs[i])
         ax.axis("off")
-    plt.savefig('media/images/result.png', dpi=fig.dpi)
+    plt.savefig('media/results/result.png', dpi=fig.dpi)
+    dir = 'media/images/'
+    for f in os.listdir(dir):
+        os.remove(os.path.join(dir, f))
     #plt.show()
 
 

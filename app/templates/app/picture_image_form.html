@@ -52,7 +52,6 @@
   border-radius: 8px;
   top: -200px;
   left: 530px;
-;
 }
 
 
@@ -60,7 +59,8 @@
 </head>
 
 <body style="background-image: linear-gradient(to right top, #1b262c, #0f4c75, #3282b8, #bbe1fa);"> 
-    <h1 class="center"> Bine ati venit! Introduceti imagini grayscale apasand butonul "Choose file", urmat de butonul "Upload" si iti vor fi returnate color! </h1>
+    <h1 id="title" class="center"> Bine ati venit! Introduceti imagini grayscale apasand butonul "Choose file", urmat de butonul "Upload" si iti vor fi returnate color! </h1>
+     <!-- <img id="bigpic" src="media/images/result.png" style="display:none;"/> -->
     <form  method = "post" enctype="multipart/form-data" class="upload">
         {% csrf_token %}
         {{ form.as_p }}
@@ -70,12 +70,15 @@
 
 <script>
 document.getElementById("myBtn").addEventListener("click", function() {
-  alert('clicked');
 
-  fetch('get_colorized_images', {
-    //method: 'GET'
-});
-  
+  fetch('get_colorized_images')
+  .then(function (response) {
+       const img = document.createElement("img");
+    img.src = 'media/results/result.png';
+    document.body.appendChild(img);
+    document.getElementById('title').style.display='none';
+    });
+ 
 });
 </script>
 
