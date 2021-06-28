@@ -241,7 +241,7 @@ def build_second_generator(chanels_input=1, chanels_output=2, size=256):
     return generator
 
 
-def visualize(model, data, val_paths):
+def visualize(model, data, val_paths, name):
     model.net_G.eval()
     with torch.no_grad():
         model.setup_input(data)
@@ -260,18 +260,20 @@ def visualize(model, data, val_paths):
         ax = plt.subplot(3, 5, i + 1 + 5)
         ax.imshow(fake_imgs[i])
         ax.axis("off")
-    plt.savefig('media/results/result.png', dpi=fig.dpi)
-    dir = 'media/images/'
-    for f in os.listdir(dir):
-        os.remove(os.path.join(dir, f))
+    plt.savefig('media/results/' + name + 'result.png', dpi=fig.dpi)
     #plt.show()
 
+def empty_folder(dir):
+    for f in os.listdir(dir):
+        os.remove(os.path.join(dir, f))
 
-def see_results(model, dl, val_paths):
+
+def see_results(model, dl, val_paths, name):
+    
     data = next(iter(dl))              
     for data in tqdm(dl):
       model.setup_input(data) 
       # functie de afiseaza pozele sub forma de subrafic, unele langa altele,
       # maxim 5 poze pe linie
-      visualize(model, data, val_paths) 
+      visualize(model, data, val_paths, name) 
 

@@ -13,6 +13,7 @@ urlpatterns = [
     path('image_upload', picture_image_view, name = 'image_upload'),
     path('success', success, name = 'success'),
     path('get_colorized_images', get_colorized_images),
+    path('get_colorized_images_first', get_colorized_images_first),
 ]
 
 if settings.DEBUG:

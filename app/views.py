@@ -38,8 +38,27 @@ def get_colorized_images(request):
     if path + '.DS_Store' in val_paths:
         val_paths.remove(path + '.DS_Store')
     val_dl = make_dataloaders(paths=val_paths, split='val')
-    see_results(model,val_dl, val_paths)
+    see_results(model,val_dl, val_paths,'second_')
     print("finised")
+    return render(request, 'app/picture_image_form.html')
+
+
+def get_colorized_images_first(request):
+
+    
+    model = MainModel()
+    model.load_state_dict(torch.load('first_model', map_location=torch.device('cpu')))
+
+    val_paths = []
+    path = 'media/images/'
+    for file in os.listdir(path):
+        val_paths.append (path + file)
+    if path + '.DS_Store' in val_paths:
+        val_paths.remove(path + '.DS_Store')
+    val_dl = make_dataloaders(paths=val_paths, split='val')
+    see_results(model, val_dl, val_paths,'first_')
+    print("finised")
+    empty_folder('media/images/')
     return render(request, 'app/picture_image_form.html')
 
 
