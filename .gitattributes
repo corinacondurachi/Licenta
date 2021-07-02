@@ -2,3 +2,4 @@
 * text=auto
 res18* filter=lfs diff=lfs merge=lfs -text
 *.pt filter=lfs diff=lfs merge=lfs -text
+first* filter=lfs diff=lfs merge=lfs -text
